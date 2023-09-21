@@ -13,11 +13,6 @@
 * [What's the catch?](whats-the-catch.md)
 * [Next steps](next-steps.md)
 
-## Group 1
-
-* [Page 1](group-1/page-1/README.md)
-  * [NDI Overview](group-1/page-1/ndi-overview.md)
-
 ## NDI SDK
 
 * [SDK Overview](ndi-sdk/sdk-overview.md)
@@ -39,8 +34,20 @@
 * [3rd Party Rights](3rd-party-rights.md)
 * [Support](support.md)
 
-## Marketing
+## 🎨 Brand Guidelines
 
-* [Brand Guidelines](marketing/brand-guidelines/README.md)
-  * [Logo](marketing/brand-guidelines/logo.md)
-  * [Typography](marketing/brand-guidelines/typography.md)
+* [Brand Guidelines](brand-guidelines/brand-guidelines/README.md)
+  * [Meet the new NDI brand](brand-guidelines/brand-guidelines/meet-the-new-ndi-brand/README.md)
+    * [Vision](brand-guidelines/brand-guidelines/meet-the-new-ndi-brand/vision.md)
+    * [Principles](brand-guidelines/brand-guidelines/meet-the-new-ndi-brand/principles.md)
+  * [Design Elements](brand-guidelines/brand-guidelines/design-elements/README.md)
+    * [Logo](brand-guidelines/brand-guidelines/design-elements/logo.md)
+    * [Typography](brand-guidelines/brand-guidelines/design-elements/typography.md)
+    * [Colors](brand-guidelines/brand-guidelines/design-elements/colors.md)
+  * [Brand Expression](brand-guidelines/brand-guidelines/brand-expression/README.md)
+    * [Motion](brand-guidelines/brand-guidelines/brand-expression/motion.md)
+    * [Illustration](brand-guidelines/brand-guidelines/brand-expression/illustration.md)
+    * [Interface](brand-guidelines/brand-guidelines/brand-expression/interface.md)
+  * [Ecosystem](brand-guidelines/brand-guidelines/ecosystem/README.md)
+    * [Format logos](brand-guidelines/brand-guidelines/ecosystem/format-logos.md)
+    * [Format usage](brand-guidelines/brand-guidelines/ecosystem/format-usage.md)

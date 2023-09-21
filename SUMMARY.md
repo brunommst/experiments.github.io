@@ -51,3 +51,13 @@
   * [Ecosystem](brand-guidelines/brand-guidelines/ecosystem/README.md)
     * [Format logos](brand-guidelines/brand-guidelines/ecosystem/format-logos.md)
     * [Format usage](brand-guidelines/brand-guidelines/ecosystem/format-usage.md)
+
+## 📃 White Paper
+
+* [What is NDI?](white-paper/what-is-ndi.md)
+* [The vision of NDI](white-paper/the-vision-of-ndi.md)
+* [🔴 NDI 5.6 - 2023](white-paper/ndi-5.6-2023.md)
+
+***
+
+* [Page 1](page-1.md)

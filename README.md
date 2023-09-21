@@ -8,7 +8,7 @@ There is a multitude of reasons for doing so. After all, the biggest tech compan
 
 * We have more control and curation over the information on our own technology and initiatives **vs** e.g. someone searching _"NDI SDK docs"_ on Google and finding random info that is not approved by us:&#x20;
 
-<figure><img src=".gitbook/assets/image.png" alt=""><figcaption><p>This first pdf is from 2017, the next result is a pdf from 2019.</p></figcaption></figure>
+<figure><img src=".gitbook/assets/image (1).png" alt=""><figcaption><p>This first pdf is from 2017, the next result is a pdf from 2019.</p></figcaption></figure>
 
 * On an **internal processes level**, we can have a single centralized place where all documentation will always be updated, can be easily found, and also easy to update. Platforms like this, called [Gitbook](https://www.gitbook.com/), are very easy to work on and edit, like a simple text file. **PLUS** whenever there’s an update, we can easily export the file we need into a PDF file and bring it to our SDK folders - which means _**no duplicate work**_ :dancer::dancer:.\
 

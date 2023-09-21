@@ -16,7 +16,7 @@ For the n00bs out there like me: if you want to know more about markdown, you ca
 2. It can be easily converted from and into other text based files like docx, pdf, html, and many more.
 3. It can seamlessly be translated into the final output in an editor like this. This is the editor view I'm seeing while I'm editing the text right now (mine is in dark mode):
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### What more can I do with Gitbook?
 

@@ -1,8 +1,14 @@
 # Table of contents
 
+## 📃 White Paper
+
+* [What is NDI?](README.md)
+* [The vision of NDI](white-paper/the-vision-of-ndi.md)
+* [🔴 NDI 5.6 - 2023](white-paper/ndi-5.6-2023.md)
+
 ## Bringing documentation online
 
-* [Why should we have documentation online?](README.md)
+* [Why should we have documentation online?](<README (1).md>)
 * [How can we have documentation online?](bringing-documentation-online/how-can-we-have-documentation-online/README.md)
   * [The user experience](bringing-documentation-online/how-can-we-have-documentation-online/the-user-experience.md)
   * [The experience for our team](bringing-documentation-online/how-can-we-have-documentation-online/the-experience-for-our-team/README.md)
@@ -51,12 +57,6 @@
   * [Ecosystem](brand-guidelines/brand-guidelines/ecosystem/README.md)
     * [Format logos](brand-guidelines/brand-guidelines/ecosystem/format-logos.md)
     * [Format usage](brand-guidelines/brand-guidelines/ecosystem/format-usage.md)
-
-## 📃 White Paper
-
-* [What is NDI?](white-paper/what-is-ndi.md)
-* [The vision of NDI](white-paper/the-vision-of-ndi.md)
-* [🔴 NDI 5.6 - 2023](white-paper/ndi-5.6-2023.md)
 
 ***
 

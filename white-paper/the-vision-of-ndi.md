@@ -46,14 +46,6 @@ But the fact is that, as with all technology-driven revolutions, the existing wa
 
 NDI is removing the limits to video connectivity.
 
-NDI is removing the limits to video connectivity by allowing multimedia systems to identify and communicate with one another over IP and to encode, transmit, and receive many streams of high-quality, low latency, frame-accurate video and audio, and exchange metadata in real-time.
-
-
-
-
-
-NDI can benefit any network-connected product, including video mixers, graphics systems, video cameras, capture cards, multimedia players, and many other devices and software.
-
-NDI operates bi-directionally over a standard GigE network with many streams on a shared connection. Its encoding algorithm is resolution and frame-rate-independent, supporting 4K resolutions and beyond, along with unlimited floating-point audio channels and custom metadata.
+NDI is removing the limits to video connectivity by&#x20;
 
 NDI enables transitioning to an incredibly versatile IP video pipeline without negating existing investments in SDI and HDMI cameras and infrastructure or costly new high-speed network infrastructures.

@@ -1,23 +1,17 @@
 ---
-description: A quick list
+description: Compressed overview of our technology.
 ---
 
-# Why should we have documentation online?
+# What is NDI?
 
-There is a multitude of reasons for doing so. After all, the biggest tech companies in the world are not doing it just to have extra leg work. But here are some:
+<figure><img src=".gitbook/assets/ndilogo.gif" alt="NDI logo animation"><figcaption></figcaption></figure>
 
-* We have more control and curation over the information on our own technology and initiatives **vs** e.g. someone searching _"NDI SDK docs"_ on Google and finding random info that is not approved by us:&#x20;
+**NDI** stands for **Network Device Interface**. It is a widely adopted video connectivity standard based on proprietary IP networking specifications.\
+\
+NDI enables multimedia systems to identify and communicate with one another over IP and to encode, transmit, and receive many streams of high-quality, low latency, frame-accurate video and audio, and exchange metadata in real-time.
 
-<figure><img src=".gitbook/assets/image (1).png" alt=""><figcaption><p>This first pdf is from 2017, the next result is a pdf from 2019.</p></figcaption></figure>
-
-* On an **internal processes level**, we can have a single centralized place where all documentation will always be updated, can be easily found, and also easy to update. Platforms like this, called [Gitbook](https://www.gitbook.com/), are very easy to work on and edit, like a simple text file. **PLUS** whenever there’s an update, we can easily export the file we need into a PDF file and bring it to our SDK folders - which means _**no duplicate work**_ :dancer::dancer:.\
-
-* A documentation section on our website would be used to contain not only technical docs about the SDKs or Tools, but also best practices guides, educational content, guidelines for marketing, co-branding but also certification programs, additional info about initiatives like NDI Beta. In short, any more detailed information or knowledge that doesn't belong on the first layer of our website.\
-  \
-  This makes it a very useful tool for basically <mark style="color:purple;">**any team within NDI**</mark>.\
-
-* If done correctly, it will r**emove a lot of work from support** - which the team can use to focus on more valuable tasks for the company, like pushing certification. In fact, a lot of research is pointing out that users and customers, in general, prefer to find clear information by themselves than having to go through a cumbersome process of support tickets. So, it's a win-win situation for support.\
-
-* Today, it is not only expected from modern tech companies to have documentation of various depths online. This not only help more directly on SEO, but most prosumers nowadays (and especially our targets) also like to probe around and understand the technology before having to actually download things. And if they understand what we are offering makes sense to them, they **instantly become more qualified leads** if they contact us to know more.
-
-### Now that we hopefully understand WHY having documentation online is essential, we can move into the [HOW](bringing-documentation-online/how-can-we-have-documentation-online/).
+NDI operates [bi-directionally](white-paper/ndi-5.6-2023.md), with many streams on a shared connection. Its encoding algorithm is resolution and frame-rate-independent, supporting 4K resolutions and beyond, along with unlimited floating-point audio channels and custom metadata.\
+\
+NDI can be integrated and/or supported by any network-connected product, including video cameras, graphics systems, video mixers, capture cards, multimedia players, video editing applications, and many other devices and software.\
+\
+NDI _is not_ a codec. NDI supports many different video codecs, like our proprietary SpeedHQ, found on the NDI High Bandwidth format, [AVC (H.264)](https://en.wikipedia.org/wiki/Advanced\_Video\_Coding) and [HEVC (H.265)](https://en.wikipedia.org/wiki/High\_Efficiency\_Video\_Coding), found on the NDI HX formats. Different NDI formats correspond to specifications related to codecs supported, bandwidth spending, glass-to-glass latency, and image quality.

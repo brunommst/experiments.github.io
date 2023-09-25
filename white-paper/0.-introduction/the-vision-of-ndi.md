@@ -1,5 +1,16 @@
 ---
 description: The current context, the future of video, and our role in it.
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
 
 # The vision of NDI
@@ -20,7 +31,7 @@ _from an **auction with thousands of bidders on social media** to a **parent cal
 
 _As video evolves, it unveils a common thread connecting all these new use cases and exciting possibilities. **One breakthrough that redefines video**:_&#x20;
 
-<figure><img src="../.gitbook/assets/image.png" alt="Branded visual showcasing the essence of NDI, our biggest belief: There is no video without connection."><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image.png" alt="Branded visual showcasing the essence of NDI, our biggest belief: There is no video without connection."><figcaption></figcaption></figure>
 
 ### We believe **there is no video without connection**.  <a href="#the-videoverse" id="the-videoverse"></a>
 

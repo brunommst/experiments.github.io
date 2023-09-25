@@ -1,3 +1,17 @@
+---
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+---
+
 # The value of NDI
 
 ### The current limitations to connectivity <a href="#the-current-limitations" id="the-current-limitations"></a>
@@ -14,7 +28,7 @@ But the fact is that, as with all technology-driven revolutions, the existing wa
 * **Too many working connectivity protocols**\
   There can be many protocols in the same workflow, requiring a lot of conversion and understanding of different technologies. Alternatively, some products only operate in closed ecosystems, which reduces overall interoperability.
 
-### NDI is removing the limits to video connectivity.
+## NDI is removing the limits to video connectivity.
 
 *   **High efficiency**
 
@@ -26,4 +40,4 @@ But the fact is that, as with all technology-driven revolutions, the existing wa
 
     We unlock complete connectivity with a growing ecosystem of NDI-enabled and compatible devices, making NDI the only protocol you’ll need to connect with multiple products, device types, and brand ecosystems.
 
-For these reasons and many more, NDI enables transitioning to an incredibly versatile IP video pipeline without negating existing investments in SDI and HDMI cameras and infrastructure or costly new high-speed network infrastructures.
+For these reasons and many more, NDI enables effectively transitioning any setup, workflow, or production into an incredibly versatile IP video pipeline, offering backward compatibility with the existing infrastructure and devices.

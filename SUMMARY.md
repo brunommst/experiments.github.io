@@ -2,9 +2,15 @@
 
 ## 📃 White Paper
 
-* [What is NDI?](README.md)
-* [The vision of NDI](white-paper/the-vision-of-ndi.md)
-* [The value of NDI](white-paper/the-value-of-ndi.md)
+* [0. Introduction](README.md)
+  * [What is NDI?](white-paper/0.-introduction/what-is-ndi.md)
+  * [The value of NDI](white-paper/0.-introduction/the-value-of-ndi.md)
+  * [The vision of NDI](white-paper/0.-introduction/the-vision-of-ndi.md)
+* [1. Discovery and Registration](white-paper/1.-discovery-and-registration/README.md)
+  * [mDNS](white-paper/1.-discovery-and-registration/mdns.md)
+  * [Discovery Service](white-paper/1.-discovery-and-registration/discovery-service.md)
+  * [Manual connection](white-paper/1.-discovery-and-registration/manual-connection.md)
+  * [NDI Groups](white-paper/1.-discovery-and-registration/ndi-groups.md)
 * [🔴 NDI 5.6 - 2023](white-paper/ndi-5.6-2023.md)
 
 ## Bringing documentation online

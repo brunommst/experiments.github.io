@@ -81,187 +81,19 @@ Zero Configuration in AV signal distribution 5
 
 13\. Glossary 33
 
-NDI White Paper
-
-**A guide to getting the most out of NDI and your network.**
-
-This paper is intended to deliver the essential facts with best practices for professionals familiar with networking devices and concepts.
-
-The wonderful thing about NDI (Network Device Interface) is that it can be utilized on almost any Gigabit network. However, as production needs grow, additional considerations will be required, which this paper will cover.
-
 ### &#x20;<a href="#_toc144291434" id="_toc144291434"></a>
 
-### NDI Discovery and Registration <a href="#_toc144291435" id="_toc144291435"></a>
+### &#x20;<a href="#_toc144291435" id="_toc144291435"></a>
 
-### Zero configuration in AV signal distribution <a href="#_toc144291436" id="_toc144291436"></a>
+### &#x20;<a href="#_toc144291438" id="_toc144291438"></a>
 
-One of the biggest issues in AV distribution in the IP world is that equipment is not identifiable by its physical connection. In networking, every connected device needs to have a unique address so another device, hardware, and applications can reach it.&#x20;
 
-But the network physical connection is dynamic and not related at all to the equipment address. For that reason, in a large network with hundreds (or thousands) of devices with addresses, it becomes difficult to find and interconnect equipment. NDI offers two different options for a zero-configuration discovery and registration: **mDNS** and **Discovery Service**.
 
-### mDNS <a href="#_toc144291437" id="_toc144291437"></a>
 
-Sending and receiving video streams across an IP network requires applications that support video and can discover receiving applications that are looking for video.
 
-NDI resolves host names to IP addresses over the LAN and does so automatically. When you start an application that sends NDI, the devices that can receive NDI become aware instantaneously. While this is a typical function on almost all networks, there are some cases where it is important to know how this works to properly configure networks utilizing managed data flows protocols.
 
-As default, NDI utilizes mDNS (multicast Domain Name System)\[1] to create the zero-configuration environment for discovery. This service sends an IP multicast message that asks the host to identify itself. The target machine then multicasts a message that includes its own IP address. This multicast is seen by all NDI-receiving machines on the subnet, which then use the information in that message to update their own caches.
-
-These multicast queries are sent to a multicast address, and thus, no single device is required to have global knowledge.
-
-When a service or device sees a query for any service it recognizes, it provides a DNS response with the information from its cache. The primary benefit of using mDNS is that it requires little or no administration to set up. Unless the network is specifically configured not to allow mDNS, NDI sources will be discovered. This format works when no infrastructure is present and can span infrastructure failures.
-
-**The mDNS Ethernet frame is a multicast UDP packet that broadcasts to\[2]:**
-
-| MAC Adress   | 01:00:5E:00:00:FB (for IPv4) |
-| ------------ | ---------------------------- |
-| Ipv4 Address | 224.0.0.251                  |
-| UDP Port     | 5353                         |
-
-Choosing the network location type on Windows devices is critical for the successful discovery and registration of NDI. Typically, the first time a Windows machine is connected to a network, a dialog window appears that allows the user to choose the network location type: Private or Public. By default, Windows sets a new network location to Public.
-
-This location is designed to keep machines from being visible and responding to broadcast pings. This location type also affects mDNS responses and keeps NDI video streams from being discovered and registered on the network.
-
-**Network locations should be set to Private for successful discovery and registration of NDI.** The Domain network location is used for domain networks, such as those at enterprise workplaces. The network administrator controls this type of network location, and it cannot be selected or changed. In this type of configuration, mDNS discovery must be allowed at the domain level. Because mDNS uses a link-local multicast address, its capacity is limited to a single physical or logical LAN.
-
-### Discovery Service <a href="#_toc144291438" id="_toc144291438"></a>
-
-NDI Discovery server is a command line application available for Windows, MacOS, and Linux. The NDI Discovery service is designed to allow you to replace the automatic discovery NDI uses with a server that operates as a centralized registry of NDI sources. This can be very helpful for installations where you wish to avoid having significant mDNS traffic for a large number of sources. It can also be useful when multicast is not possible or desirable; it is very common for cloud computing services not to allow multicast traffic. When using the Discovery service, NDI can operate entirely in unicast mode and thus in almost any installation. The Discovery server supports all NDI functionality, including NDI groups. Clients should be configured to connect with the Discovery service instead of using mDNS to locate sources.
-
-When there is a Discovery server, NDI applications will use both mDNS and the Discovery server to find and receive sources on the local network that are not on machines configured to use discovery.
-
-NDI Device
-
-mDNS
-
-Discovery Service
-
-mDNS
-
-Discovery Service
-
-For senders, if a Discovery service is specified, then mDNS will not be used; these sources will only be visible to other finders and receivers configured to use the Discovery server.
-
-To configure the Discovery service for NDI clients, **you may use Access Manager (included in the NDI Tools bundle)** to enter the IP address of the Discovery server machine.
-
-**Within NDI version 5, there is full support for redundant NDI Discovery servers.** When configuring a Discovery server, it is possible to specify a comma-delimited list of servers (e.g., “192.168.10.10, 192.168.10.12”), and then they will all be used simultaneously. If one of these servers then goes down, as long as one remains active, then all sources will always remain visible, no matter what the others do then all sources can be seen.
-
-This multiple-server capability can also be used to ensure entirely separate servers to allow sources to be broken into separate groups, which can serve many workflows or security needs.
-
-Once two NDI devices have discovered each other on the network, video can be passed from the sending device to the receiving device. After the compression of the video, the NDI sending device opens a session to the receiving NDI device. At this point, we have two endpoints that consist of an IP address and a port number.
-
-![A screenshot of a computer
-
-Description automatically generated](<../.gitbook/assets/1 (1).png>)
-
-In Windows and MacOS the Discovery Server addresses are configured in the **Advanced Feature Tab.** In Linux the addresses of the NDI Discovery Servers can be manually added in the NDI configuration file located in the home directory of the effective user: "ndi-config.v1.json"
-
-Here is the way to manually set up the **Discovery Service** in the configuration file:
-
-"networks": {\
-"ips": "",\
-"discovery": "192.168.10.10,192.168.10.12",
-
-### Manual connection
-
-One approach to manually interconnect NDI devices is to specify the IP address of the transmitter in the receiver.
-
-![A screenshot of a computer
-
-Description automatically generated](<../.gitbook/assets/2 (1).png>)
-
-In Windows and MacOS, this can be achieved using the NDI Access Manager in the External Sources feature. Several NDI hardware decoders also support this functionality.
-
-For Linux, the IP addresses of NDI senders can be added manually in the NDI configuration file called "ndi-config.v1.json." This file is in the home directory of the user currently logged in.
-
-Specifying the IP address of an NDI source allows the receiver to receive NDI sources that are in a different subnet and may not be discoverable by mDNS (Multicast DNS). This method enables the reception of NDI sources that might be otherwise inaccessible due to network configurations or limitations.
-
-In Linux manual connections can be added in the NDI configuration file located in the home directory of the effective user: "ndi-config.v1.json"
-
-Here is the way to manually set up NDI sources in the configuration file:
-
-"networks": {\
-"ips": "192.168.123.200,10.10.123.22,",\
-"discovery": "",
 
 ### NDI Groups <a href="#_toc144291440" id="_toc144291440"></a>
-
-NDI groups enhance the efficiency and management of NDI-based workflows by providing a structured way to organize and control the visibility and access of NDI sources and destinations within a network.
-
-NDI devices support two different kinds of Groups: **Send** and **Receive**.
-
-A device can be part of different Groups, some Groups only in the Send or Receive mode:
-
-| **NDI DEVICE 01** |            |
-| ----------------- | ---------- |
-| RECEIVE Group     | SEND Group |
-| Public            |            |
-| Group 01          |            |
-| Group 02          | Group 02   |
-| Group 03          |            |
-| Group 04          | Group 04   |
-
-| **NDI DEVICE 02** |            |
-| ----------------- | ---------- |
-| RECEIVE Group     | SEND Group |
-| Public            | Public     |
-|                   | Group 01   |
-| Group 02          | Group 02   |
-| Group 03          |            |
-| Group 04          | Group 04   |
-
-| **NDI DEVICE 03** |            |
-| ----------------- | ---------- |
-| RECEIVE Group     | SEND Group |
-|                   | Public     |
-|                   |            |
-| Group 02          |            |
-|                   | Group 03   |
-| Group 04          |            |
-
-In this scenario, **NDI Device 01** is sending discovery information\
-in Groups 02 and 04. Devices part of the **Receive Groups 02** and **04**\
-can discover and receive NDI streams from **Device 01.**
-
-![](../.gitbook/assets/3.png)
-
-**NDI Device 02** is sending discovery information in Groups Public, 01, 02 and 04.
-
-![A group of people sitting in a group
-
-Description automatically generated with medium confidence](../.gitbook/assets/4.png)
-
-**NDI Device 03** is sending discovery information in Groups Public, and 03.
-
-![](../.gitbook/assets/5.png)
-
-**There are different ways to define Groups in NDI Devices:**
-
-![A screenshot of a computer
-
-Description automatically generated](../.gitbook/assets/6.png)
-
-In MS Windows and MacOS, Groups are defined in the NDI Access Manager, which is part of the free NDI Tools:
-
-The Groups string for each Send and Receive operation must not exceed 248 bytes in length, which means that the total length of the combined Group names should not exceed 248 characters.
-
-In Linux NDI Groups can be defined in the NDI configuration file located in the home directory of the effective user: "ndi-config.v1.json"
-
-Here is the way to configure Groups in the configuration file:
-
-},
-
-"groups": {
-
-"send": "Public",
-
-"recv": "Public,Group 01,Group 02"
-
-},
-
-_Hardware NDI Devices must support NDI Groups to be compliant with the NDI standard specifications._
-
-Here are some examples of hardware devices with NDI Groups support:
 
 ![A screenshot of a computer
 

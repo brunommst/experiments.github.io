@@ -1,3 +1,22 @@
+---
+cover: ../../.gitbook/assets/ndi sdk background light (1).png
+coverY: 0
+layout:
+  cover:
+    visible: true
+    size: hero
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+---
+
 # 7. Network Interface Settings
 
 NDI is designed to enable successful video transport using the default configuration of network interface drivers; however, most recent network interface drivers do support the configuration of advanced properties that can help optimize NDI transmission.

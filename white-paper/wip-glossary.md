@@ -1,4 +1,4 @@
-# 🔴 NDI 5.6 - 2023
+# WIP: Glossary
 
 
 

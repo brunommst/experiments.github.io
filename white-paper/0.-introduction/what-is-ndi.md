@@ -21,7 +21,7 @@ layout:
 \
 NDI enables multimedia systems to identify and communicate with one another over IP and to encode, transmit, and receive many streams of high-quality, low latency, frame-accurate video and audio, and exchange metadata in real-time.
 
-NDI operates [bi-directionally](../ndi-5.6-2023.md), with many streams on a shared connection. Its encoding algorithm is resolution and frame-rate-independent, supporting 4K resolutions and beyond, along with unlimited floating-point audio channels and custom metadata.\
+NDI operates [bi-directionally](../wip-glossary.md), with many streams on a shared connection. Its encoding algorithm is resolution and frame-rate-independent, supporting 4K resolutions and beyond, along with unlimited floating-point audio channels and custom metadata.\
 \
 NDI can be integrated and/or supported by any network-connected product, including video cameras, graphics systems, video mixers, capture cards, multimedia players, video editing applications, and many other devices and software.\
 \

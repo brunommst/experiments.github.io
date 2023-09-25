@@ -1,3 +1,22 @@
+---
+cover: ../../.gitbook/assets/ndi sdk background light (1).png
+coverY: 0
+layout:
+  cover:
+    visible: true
+    size: hero
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+---
+
 # 6. Bandwidth
 
 NDI operates most efficiently in a dedicated network with high bandwidth and high availability. This contrasts with unmanaged environments such as the public Internet or networks where video rides along with data without priority.

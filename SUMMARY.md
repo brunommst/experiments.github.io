@@ -39,7 +39,7 @@
   * [NDI Advanced SDK – Genlock API](white-paper/11.-synchronization/ndi-advanced-sdk-genlock-api.md)
   * [Timestamp, NDI Advanced SDK – AV Sync API](white-paper/11.-synchronization/timestamp-ndi-advanced-sdk-av-sync-api.md)
 * [12. NDI in Cloud](white-paper/12.-ndi-in-cloud.md)
-* [🔴 NDI 5.6 - 2023](white-paper/ndi-5.6-2023.md)
+* [WIP: Glossary](white-paper/wip-glossary.md)
 
 ## Bringing documentation online
 

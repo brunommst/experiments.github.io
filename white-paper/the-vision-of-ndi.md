@@ -30,6 +30,10 @@ The future of video is one in which content is transferred easily and efficientl
 
 We refer to this next iteration of the world video as the **videoverse:** _a connected global environment that contains all devices, technologies, services, and businesses based on creating, sharing, coordinating, and consuming video, either by humans or machines.​_
 
+**NDI is the technology connecting it.**
+
+
+
 ### The current limitations to connectivity <a href="#the-current-limitations" id="the-current-limitations"></a>
 
 When we think about video connectivity, it’s natural to consider the ever-expanding possibilities, more options, and unlimited potential.

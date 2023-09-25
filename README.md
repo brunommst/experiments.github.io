@@ -1,5 +1,5 @@
 ---
-description: Compressed overview of our technology.
+description: A compressed overview of our technology.
 ---
 
 # What is NDI?

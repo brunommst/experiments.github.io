@@ -4,6 +4,7 @@
 
 * [What is NDI?](README.md)
 * [The vision of NDI](white-paper/the-vision-of-ndi.md)
+* [The value of NDI](white-paper/the-value-of-ndi.md)
 * [🔴 NDI 5.6 - 2023](white-paper/ndi-5.6-2023.md)
 
 ## Bringing documentation online

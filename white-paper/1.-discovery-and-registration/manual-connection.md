@@ -28,6 +28,6 @@ In Linux manual connections can be added in the NDI configuration file located i
 
 Here is the way to manually set up NDI sources in the configuration file:
 
-"networks": {\
-"ips": "192.168.123.200,10.10.123.22,",\
-"discovery": "",
+`"networks": {`\
+`"ips": "`<mark style="color:red;">`192.168.123.200,10.10.123.22,`</mark>`",`\
+`"discovery": "",`

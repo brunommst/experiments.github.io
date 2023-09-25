@@ -6,7 +6,7 @@ So, what will this documentation section look like to a user navigating our webs
 
 Well, from an information architecture perspective, this section would be under the **resources** section in our main menu, as illustrated below:
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 Many links to specific pages within Docs and Guides could also be found within multiple sections of the website (e.g. a CTA after we talk about High Bandwidth stating _"Learn more about the technical details of NDI High Bandwidth"_)
 

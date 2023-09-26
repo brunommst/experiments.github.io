@@ -22,7 +22,7 @@ When there is a Discovery server, NDI applications will use both mDNS and the Di
 
 For senders, if a Discovery service is specified, then mDNS will not be used; these sources will only be visible to other finders and receivers configured to use the Discovery server.
 
-#### To configure the Discovery service for NDI clients, **you may use Access Manager (included in the NDI Tools Core Suite)** to enter the IP address of the Discovery server machine.
+#### To configure the Discovery service for NDI clients, **you may use Access Manager (included in the NDI Tools Core Suite)** to enter the IP[^1] address of the Discovery server machine.
 
 **Within NDI version 5, there is full support for redundant NDI Discovery servers.** When configuring a Discovery server, it is possible to specify a comma-delimited list of servers (e.g., “192.168.10.10, 192.168.10.12”), and then they will all be used simultaneously. If one of these servers then goes down, as long as one remains active, then all sources will always remain visible, no matter what the others do then all sources can be seen.
 
@@ -39,3 +39,5 @@ Here is the way to manually set up the **Discovery Service** in the configuratio
 `"networks": {`\
 `"ips": "",`\
 `"discovery": "`<mark style="color:red;">`192.168.10.10,192.168.10.12`</mark>`",`
+
+[^1]: IP (Internet Protocol) is the communications protocol for the Internet, many wide area networks (WANs) and most local area networks (LANs) that define the rules, formats, and address scheme for exchanging datagrams or packets between a source computer or device and a destination computer or device.

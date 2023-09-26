@@ -1,7 +1,5 @@
 # Port Numbers
 
-### Port Numbers
-
 Each NDI connection will require one more port number. Current versions try for these to be in a predictable port range, although if some of this range is taken by other applications it might need to use higher numbers. The following table describes the used port numbers, their types, and their purpose.
 
 It is recommended that you use the connection types that are default for the current version of NDI since these represent the best recommendations that we have tested and observed to yield the best performance in the field. Earlier versions of NDI might use ports in the ephemeral range, although modern versions of NDI no longer use these to ensure that the port numbers are more predictable and easier to configure in

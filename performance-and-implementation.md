@@ -52,7 +52,7 @@ Modern versions of NDI almost certainly already default to using hardware accele
 
 ### Reliable UDP With Multi-Stream Congestion Control <a href="#_toc131521284" id="_toc131521284"></a>
 
-In NDI version 5 the default communication mechanism is a reliable UDP protocol that represents the state-of-the-art communication protocol that is implemented by building upon all our experience we have seen in the real world with NDI across a massive variety of different installations. By using UDP it does not rely on any direct round-trip, congestion control or flow control issues that are typically associated with TCP. Most importantly, our observation has been that on real world networks, as you approach the total bandwidth available across many different channels of video that the management of the network of bandwidth becomes the most common problem. Our reliable UDP solves this by moving all streams between sources into a single connection across which the congestion control is applied in aggregate to all streams at once which represents a massive improvement in almost all installations. These streams are all entirely non-blocking with each-other so that even under high packet loss situations that there is no possibility of a particular loss impacting any other portions of the connection.
+In NDI version 5 the default communication mechanism is a reliable UDP[^1] protocol that represents the state-of-the-art communication protocol that is implemented by building upon all our experience we have seen in the real world with NDI across a massive variety of different installations. By using UDP it does not rely on any direct round-trip, congestion control or flow control issues that are typically associated with TCP. Most importantly, our observation has been that on real world networks, as you approach the total bandwidth available across many different channels of video that the management of the network of bandwidth becomes the most common problem. Our reliable UDP solves this by moving all streams between sources into a single connection across which the congestion control is applied in aggregate to all streams at once which represents a massive improvement in almost all installations. These streams are all entirely non-blocking with each-other so that even under high packet loss situations that there is no possibility of a particular loss impacting any other portions of the connection.
 
 One of the biggest problems with UDP packet sending is that by needing to send many small packets onto the network that one results in a very large OS kernel overhead. Our implementation works around this by supporting fully asynchronous sending of many packets at once and supporting packet coalescing on the receiving side to allow the kernel and network card driver to offload a huge fraction of the processing.
 
@@ -66,7 +66,7 @@ On Linux, to get the best performance we need to take advantage of Generic Segme
 
 ### Multicast <a href="#_toc131521285" id="_toc131521285"></a>
 
-NDI supports multicast-based video sources using multicast UDP with forwards error correction to correct for packet loss.
+NDI supports multicast-based video sources using multicast UDP[^2] with forwards error correction to correct for packet[^3] loss.
 
 It is important to be aware that using multicast on a network that is not configured correctly is very similar to a “denial of service” attack on the entire network; for this reason, multicast sending is disabled by default.
 
@@ -74,7 +74,7 @@ Every router that we have tested has treated multicast traffic as if it was broa
 
 What this means, though, is that every multicast packet received is sent to _every destination on the network,_ regardless of whether it was needed there or not. Because NDI requires high bandwidth multicast, even with a limited number of sources on a large network, the burden of sending this many data to all network sources can cripple the entire network’s performance.
 
-To avoid this _serious_ problem, it is essential to ensure that _every_ router on the network has proper multicast filtering enabled. This option is most referred to as “IGMP snooping”. This topic is described in detail at [https://en.wikipedia.org/wiki/IGMP\_snooping](https://en.wikipedia.org/wiki/IGMP\_snooping). If you are unable to find a way to enable this option, we recommend that you use multicast NDI with all due caution.
+To avoid this _serious_ problem, it is essential to ensure that _every_ router on the network has proper multicast filtering enabled. This option is most referred to as “IGMP[^4] snooping”. This topic is described in detail at [https://en.wikipedia.org/wiki/IGMP\_snooping](https://en.wikipedia.org/wiki/IGMP\_snooping). If you are unable to find a way to enable this option, we recommend that you use multicast NDI with all due caution.
 
 #### Debugging with multicast <a href="#_toc131521286" id="_toc131521286"></a>
 
@@ -83,3 +83,11 @@ Another important cautionary note is that a software application like NDI will s
 Unlike most operations in the operating system, the un-subscription step is not automated by the OS; once you are subscribed to a group, your computer will continue to receive data until the router sends an IGMP query to verify whether it is still needed. This happens about every 5 minutes on typical networks.
 
 The result is that if you launch an NDI multicast stream and kill your application _without closing the NDI connection correctly_, your computer will continue to receive the data from the network until this timeout expires.
+
+[^1]: UDP (User Datagram Protocol) is an alternative protocol to TCP that is used when reliable delivery of data packets is not required. UDP is typically used for applications where timeliness is of higher priority than accuracy, such as streaming media, teleconferencing, and voice-over IP (VoIP).
+
+[^2]: UDP (User Datagram Protocol) is an alternative protocol to TCP that is used when reliable delivery of data packets is not required. UDP is typically used for applications where timeliness is of higher priority than accuracy, such as streaming media, teleconferencing, and voice-over IP (VoIP).
+
+[^3]: A packet, also known as a frame or datagram, is a unit of data transmitted over a packet-switched network, such as a LAN, WAN, or the Internet.
+
+[^4]: IGMP (Internet Group Management Protocol) is the protocol used in IP multicasting that allows a host to report its multicast group membership to networked routers in order to receive data, messages, or content addressed to the designated multicast group.

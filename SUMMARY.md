@@ -3,13 +3,12 @@
 ## 📃 White Paper
 
 * [0. Introduction](README.md)
-  * [The value of NDI](white-paper/0.-introduction/the-value-of-ndi.md)
 * [1. Discovery and Registration](white-paper/1.-discovery-and-registration/README.md)
   * [mDNS](white-paper/1.-discovery-and-registration/mdns.md)
   * [Discovery Service](white-paper/1.-discovery-and-registration/discovery-service.md)
   * [Manual connection](white-paper/1.-discovery-and-registration/manual-connection.md)
   * [NDI Groups](white-paper/1.-discovery-and-registration/ndi-groups.md)
-* [2. NDI Protocols](white-paper/2.-ndi-protocols.md)
+* [2. NDI Protocols](white-paper/2.-ndi-protocols/README.md)
 * [3. NDI Related Network Ports](white-paper/3.-ndi-related-network-ports.md)
 * [4. Getting video across the network](white-paper/4.-getting-video-across-the-network.md)
 * [5. Network Layout](white-paper/5.-network-layout.md)
@@ -21,11 +20,11 @@
   * [NDI HX3 h.264 (8bit 4:2:0)](white-paper/6.-bandwidth/ndi-hx3-h.264-8bit-4-2-0.md)
   * [NDI HX3 h.265 (8bit 4:2:0)](white-paper/6.-bandwidth/ndi-hx3-h.265-8bit-4-2-0.md)
   * [NDI Proxy and bandwidth optimization](white-paper/6.-bandwidth/ndi-proxy-and-bandwidth-optimization.md)
-* [7. Network Interface Settings](white-paper/7.-network-interface-settings.md)
+* [7. Network Interface Settings](white-paper/7.-network-interface-settings/README.md)
 * [8. NIC Selection](white-paper/8.-nic-selection.md)
-* [9. Encoding and Decoding](white-paper/9.-encoding-and-decoding.md)
+* [9. Encoding and Decoding](white-paper/9.-encoding-and-decoding/README.md)
 * [10. Multicast](white-paper/10.-multicast.md)
-* [11. Synchronization](white-paper/11.-synchronization.md)
+* [11. Synchronization](white-paper/11.-synchronization/README.md)
 * [12. NDI in Cloud](white-paper/12.-ndi-in-cloud.md)
 
 ## Bringing documentation online

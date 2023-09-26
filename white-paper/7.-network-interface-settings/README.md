@@ -1,5 +1,5 @@
 ---
-cover: ../.gitbook/assets/ndi sdk background light (1).png
+cover: ../../.gitbook/assets/ndi sdk background light (1).png
 coverY: 0
 layout:
   cover:

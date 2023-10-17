@@ -41,7 +41,9 @@
 * [Port Numbers](sdk/port-numbers.md)
 * [Configuration Files](sdk/configuration-files.md)
 * [Platform Considerations](sdk/platform-considerations.md)
-* [NDI Send](sdk/ndi-send.md)
+* [NDI-SEND](sdk/ndi-send.md)
+* [NDI-FIND](sdk/ndi-find.md)
+* [NDI-RECV](sdk/ndi-recv.md)
 
 ## ℹ Glossary
 

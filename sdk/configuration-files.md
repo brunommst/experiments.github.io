@@ -10,19 +10,7 @@ Please pay extra attention to the value types, as it is important that these mat
 
 
 
-{% tabs %}
-{% tab title="First Tab" %}
-
-{% endtab %}
-
-{% tab title="Second Tab" %}
-
-{% endtab %}
-{% endtabs %}
-
-
-
-<table data-header-hidden data-full-width="true"><thead><tr><th></th><th></th></tr></thead><tbody><tr><td><pre class="language-json" data-line-numbers data-full-width="false"><code class="lang-json">{
+<table data-header-hidden data-full-width="true"><thead><tr><th width="435"></th><th></th></tr></thead><tbody><tr><td><pre class="language-json" data-line-numbers data-full-width="false"><code class="lang-json">{
    "ndi": {
       "machinename": "Hello World",
 </code></pre></td><td>This is an option that allows you to change how your machine is identified on the network using NDI, overriding the local name of the machine. This option should be used with great care since a clash of machine names on the network is incompatible with mDNS and can cause all other sources not to work correctly. When using this, it is essential to ensure that all machine names on the network are unique. We recommend avoiding using this parameter when at all possible.</td></tr><tr><td><pre class="language-json" data-line-numbers><code class="lang-json">"send": {
@@ -59,9 +47,9 @@ Please pay extra attention to the value types, as it is important that these mat
   },
   "recv": {
     "enable": true
-<strong>  } 
-</strong><strong>},
-</strong></code></pre></td><td><p>These settings enable or disable the use of multicast for receiving. If you explicitly disable it on a machine then, even if the sender is configured for multicast, it will use unicast. When multicast receiving is enabled, and a sender is available in the same local network, the receiver can negotiate for a multicast stream to be sent. If the sender is not on the same local network, this negotiation does not occur (since it could lead to a multicast stream being sent but never able to arrive at the receiver). If you have a correctly configured network and can ensure a multicast stream can route reliably from a different network to the receiver’s local network, you can specify the sender’s subnet in the “subnets” setting to allow multicast negotiation to occur.<br><br>These settings pertain to the multicast NDI setting on this machine. The first setting determines whether multicast sending is enabled or not. By default, multicast sending is disabled. Next is the IP address prefix and mask. In this example, multicast IP addresses will be chosen in the range 239.255.0.0 - 239.255.255.255. NDI will attempt to use different multicast addresses to ensure that the streams can be filtered efficiently by the network adapter. NDI senders need a range of multicast addresses available. The TTL value controls how many “hops” the multicast sending traffic will take, allowing it to move outside of the local network.<br><br>There are separate settings for sending and receiving. Both sides need to allow this mode to be applied; sources and receivers have it enabled by default.<br></p><p>We generally discourage the use of Multicast since configuration and ensuring that high performance is achieved is very difficult at a network level; in most cases, the default protocols (particularly reliable UDP) perform much better.</p></td></tr><tr><td><p></p><pre class="language-json" data-line-numbers><code class="lang-json">"tcp": {
+  } 
+},
+</code></pre></td><td><p>These settings enable or disable the use of multicast for receiving. If you explicitly disable it on a machine then, even if the sender is configured for multicast, it will use unicast. When multicast receiving is enabled, and a sender is available in the same local network, the receiver can negotiate for a multicast stream to be sent. If the sender is not on the same local network, this negotiation does not occur (since it could lead to a multicast stream being sent but never able to arrive at the receiver). If you have a correctly configured network and can ensure a multicast stream can route reliably from a different network to the receiver’s local network, you can specify the sender’s subnet in the “subnets” setting to allow multicast negotiation to occur.<br><br>These settings pertain to the multicast NDI setting on this machine. The first setting determines whether multicast sending is enabled or not. By default, multicast sending is disabled. Next is the IP address prefix and mask. In this example, multicast IP addresses will be chosen in the range 239.255.0.0 - 239.255.255.255. NDI will attempt to use different multicast addresses to ensure that the streams can be filtered efficiently by the network adapter. NDI senders need a range of multicast addresses available. The TTL value controls how many “hops” the multicast sending traffic will take, allowing it to move outside of the local network.<br><br>There are separate settings for sending and receiving. Both sides need to allow this mode to be applied; sources and receivers have it enabled by default.<br></p><p>We generally discourage the use of Multicast since configuration and ensuring that high performance is achieved is very difficult at a network level; in most cases, the default protocols (particularly reliable UDP) perform much better.</p></td></tr><tr><td><p></p><pre class="language-json" data-line-numbers><code class="lang-json">"tcp": {
   "send": {
     "enable": false
   }, 
@@ -80,9 +68,9 @@ Please pay extra attention to the value types, as it is important that these mat
 </code></pre></td><td><p>These settings enable or disable unicast UDP sending or receiving. If unicast UDP is disabled, then the base TCP connection will be used.</p><p></p><p>Unicast settings determine whether UDP with forwards- error correction is used for sending. While configurable, we recommended that this be enabled by default and not changed. Our experience has been that our UDP implementation handles poor networks and packet loss more robustly than TCP/IP, which can encounter timeout problems when acknowledgment packets are dropped (while rare, this can happen over a period of hours).</p><p></p><p>The UDP implementation also fully implements paced network sending with zero memory copy scatter-gather lists and jittered timing to reduce the chance of packet loss on networks with many synchronized video streams. By default, 4Kb UDP packets are used, although jumbo packets do not need to be enabled on the network.</p><p></p><p>All versions of NDI fall to TCP/IP if a particular protocol is not supported by both sides. Again, note that that a sender implementation can simultaneously send internally in multiple modes based on what receivers require.</p><p></p><p>There are separate UDP unicast settings for sending and receiving. Both sides need to allow this for UDP mode to be applied; sources and receivers have it enabled by default.</p><p></p><p>Unicast UDP is not the default mode in NDI 5, which performs better with Reliable UDP.</p></td></tr><tr><td><p></p><pre class="language-json" data-line-numbers><code class="lang-json">"codec": {
       "shq": {
         "quality": 100,
-<strong>        "mode": "auto"
-</strong>      }
-<strong>    }, 
-</strong>  }
+        "mode": "auto"
+      }
+    }, 
+  }
 }
 </code></pre></td><td><em>These settings are only available in the NDI Advanced SDK</em> and allow you to override the default codec quality settings of NDI. The “quality” setting is a percentage scale to apply to the bit-rate control; for instance, a value of 200 would mean that NDI targets a bitrate that is double the NDI default. Be careful when specifying high bitrates because the CPU usage required for compression and decompression might increase, and the strain on the network and the OS networking stack is correspondingly increased. Once the bitrate hits a maximum level for a particular media type (e.g., the codec q value becomes the maximum), then increasing it further might have no impact.<br><br>The “mode” allows you to force NDI into a particular color mode. The default is “auto,” which uses heuristics to best allocate bits between the luminance and chroma fields. You may specify “4:2:2” or “4:2:0” here to force the codec into a particular chroma-subsampling mode. Please note that often forcing it into a particular mode will cause the codec to be less high quality than letting the codec choose the bit allocation that results in the best PSNR.</td></tr><tr><td></td><td></td></tr></tbody></table>

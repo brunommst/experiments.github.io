@@ -17,7 +17,7 @@ layout:
     visible: true
 ---
 
-# 0. Introduction
+# Introduction
 
 This White Paper offers a compressed overview of NDI: its value and place in the future of video, and the technology's fundamental features, protocols, and settings.\
 \
@@ -31,7 +31,7 @@ It is updated in real-time by the NDI team to reflect the most recent developmen
 \
 NDI enables multimedia systems to identify and communicate with one another over IP and to encode, transmit, and receive many streams of high-quality, low latency, frame-accurate video and audio, and exchange metadata in real-time.
 
-NDI operates [bi-directionally](broken-reference), with many streams on a shared connection. Its encoding algorithm is resolution and frame-rate-independent, supporting 4K resolutions and beyond, along with unlimited floating-point audio channels and custom metadata.\
+NDI operates bi-directionally, with many streams on a shared connection. Its encoding algorithm is resolution and frame-rate-independent, supporting 4K resolutions and beyond, along with unlimited floating-point audio channels and custom metadata.\
 \
 NDI can be integrated and/or supported by any network-connected product, including video cameras, graphics systems, video mixers, capture cards, multimedia players, video editing applications, and many other devices and software.\
 \

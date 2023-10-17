@@ -27,6 +27,22 @@
 * [11. Synchronization](white-paper/11.-synchronization/README.md)
 * [12. NDI in Cloud](white-paper/12.-ndi-in-cloud.md)
 
+## 🛠 SDK
+
+* [Introduction](sdk/introduction.md)
+* [SDK Changes](sdk/sdk-changes.md)
+* [Licensing](sdk/licensing.md)
+* [Software Distribution](sdk/software-distribution.md)
+* [CPU Requirements](sdk/cpu-requirements.md)
+* [Dynamic Loading of NDI Libraries](sdk/dynamic-loading-of-ndi-libraries.md)
+* [Performance and Implementation](sdk/performance-and-implementation.md)
+* [Startup and Shutdown](sdk/startup-and-shutdown.md)
+* [Example Code](sdk/example-code.md)
+* [Port Numbers](sdk/port-numbers.md)
+* [Configuration Files](sdk/configuration-files.md)
+* [Platform Considerations](sdk/platform-considerations.md)
+* [NDI Send](sdk/ndi-send.md)
+
 ## ℹ Glossary
 
 * [Technical terminology](glossary/technical-terminology.md)

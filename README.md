@@ -69,7 +69,7 @@ We refer to this next iteration of the world video as the **videoverse:** _a con
 
 **NDI is the technology connecting it.**
 
-<figure><img src=".gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ##
 

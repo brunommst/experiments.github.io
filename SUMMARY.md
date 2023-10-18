@@ -44,6 +44,9 @@
 * [NDI-SEND](sdk/ndi-send.md)
 * [NDI-FIND](sdk/ndi-find.md)
 * [NDI-RECV](sdk/ndi-recv.md)
+* [NDI Routing](sdk/ndi-routing.md)
+* [Command Line Tools](sdk/command-line-tools.md)
+* [Frame Types](sdk/frame-types.md)
 
 ## ℹ Glossary
 

@@ -4,7 +4,7 @@ description: >-
   metadata types. The parameters of these structures are documented below.
 ---
 
-# Frame Types
+# 17. Frame Types
 
 ### Video Frames (NDILIB\_VIDEO\_FRAME\_V2\_T)
 
@@ -77,7 +77,44 @@ NDI Audio is passed to the SDK in floating-point and has a dynamic range without
 
 **Two tables are provided below** that explain the relationship between NDI audio values for the SMPTE and EBU audio standards.
 
-**SMPTE Audio levels - reference Level**
+#### **SMPTE Audio levels - reference Level**
 
 <table data-header-hidden data-full-width="true"><thead><tr><th width="202"></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td>NDI</td><td>0.0</td><td>0.063</td><td>0.1</td><td>0.63</td><td>1.0</td><td>10.0</td></tr><tr><td>dBu</td><td>-∞</td><td>-20 dB</td><td>-16 dB</td><td>+0 dB</td><td>+4 dB</td><td>+24 dB</td></tr><tr><td>dBVU</td><td>-∞</td><td>-24 dB</td><td>-20 dB</td><td>-4 dB</td><td>+0 dB</td><td>+20 dB</td></tr><tr><td>SMPTE dBFS</td><td>-∞</td><td>-44 dB</td><td>-40 dB</td><td>-24 dB</td><td>-20 dB</td><td>+0 dB</td></tr></tbody></table>
 
+If you want a simple ‘recipe’ that matches SDI audio levels based on the SMPTE audio standard, you will want to have 20 dB of headroom above the SMPTE reference level at +4 dBu, which is at +0 dBVU, to correspond to a level of 1.0 in NDI floating-point audio. Conversion from floating-point to integer audio would thus be performed with:
+
+> `int smpte_sample_16bit = max(-32768, min(32767, (int)(3276.8f*smpte_sample_fp)));`
+
+#### **EBU Audio levels - reference Level**
+
+<table data-header-hidden data-full-width="true"><thead><tr><th width="202"></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td>NDI</td><td>0.0</td><td>0.063</td><td>0.1</td><td>0.63</td><td>1.0</td><td>5.01</td></tr><tr><td>dBu</td><td>-∞</td><td>-20 dB</td><td>-16 dB</td><td>+0 dB</td><td>+4 dB</td><td>+18 dB</td></tr><tr><td>dBVU</td><td>-∞</td><td>-24 dB</td><td>-20 dB</td><td>-4 dB</td><td>+0 dB</td><td>+14 dB</td></tr><tr><td>EBU dBFS</td><td>-∞</td><td>-38 dB</td><td>-34 dB</td><td>-18 dB</td><td>-14 dB</td><td>+0 dB</td></tr></tbody></table>
+
+If you want a simple ‘recipe’ that matches SDI audio levels based on the EBU audio standard, you will want to have 18 dB of headroom above the EBU reference level at 0 dBu (i.e., 14 dB above the SMPTE/NDI reference level). Conversion from floating-point to integer audio would thus be performed with:
+
+> `int ebu_sample_16bit = max(-32768, min(32767, (int)(6540.52f*ebu_sample_fp)));`
+
+Because many applications provide interleaved 16-bit audio, the NDI library includes utility functions that will convert in and out of floating-point formats from PCM 16-bit formats.
+
+There is also a utility function for sending signed 16-bit audio using NDIlib\_util\_send\_send\_audio\_interleaved\_16s. Please refer to the example projects and the header file _Processing.NDI.utilities.h_, which lists the available functions.
+
+In general, we recommend the use of floating-point audio since clamping is not possible, and audio levels are well-defined without a need to consider audio headroom.
+
+**The audio sample structure is defined as described below**.
+
+<table data-full-width="true"><thead><tr><th width="294">Parameter</th><th>Description</th></tr></thead><tbody><tr><td><strong>sample_rate (int)</strong></td><td>This is the current audio sample rate. For instance, this might be 44100, 48000 or 96000. It can, however, be any value.</td></tr><tr><td><strong>no_channels (int)</strong></td><td>This is the number of discrete audio channels. <strong>1</strong> represents MONO audio, <strong>2</strong> represents STEREO, and so on. There is no reasonable limit on the number of allowed audio channels.</td></tr><tr><td><strong>no_samples (int)</strong></td><td><p>This is the number of audio samples in this buffer. Any number will be handled correctly by the NDI SDK. However, when sending audio and video together, please bear in mind that many audio devices work better with audio buffers of the same approximate length as the video framerate.</p><p></p><p>We encourage sending audio buffers that are approximately half the length of the video frames and that receiving devices support buffer lengths as broadly as they reasonably can.</p></td></tr><tr><td><strong>timecode (int64_t, 64-bit signed integer)</strong></td><td><p>This is the timecode of this frame in 100 ns intervals. This is generally not used internally by the SDK but is passed through to applications which may interpret it as they wish. When sending data, a value of <code>NDIlib_send_timecode_synthesize</code> can be specified (and should be the default), the operation of this value is documented in the sending section of this documentation.</p><p></p><p><code>NDIlib_send_timecode_synthesize</code> will yield UTC time in 100 ns intervals since the Unix Time Epoch 1/1/1970 00:00. When interpreting this timecode, a receiving application may choose to localize the time of day based on time zone offset, which can optionally be communicated by the sender in connection metadata.</p><p></p><p>Since the timecode is stored in UTC within NDI, communicating timecode time of day for non-UTC time zones requires a translation.</p></td></tr><tr><td><strong>FourCC (NDIlib_FourCC_audio_type_e)</strong></td><td>This is the sample format for this buffer. There is currently one supported format: <code>NDIlib_FourCC_type_FLTP</code>. This format stands for floating-point audio.</td></tr><tr><td><strong>p_data (uint8_t*)</strong></td><td>If FourCC is <code>NDIlib_FourCC_type_FLTP</code>, then this is the floating-point audio data in planar format, with each audio channel stored together with a stride between channels specified by channel_stride_in_bytes.</td></tr><tr><td><strong>channel_stride_in_bytes (int)</strong></td><td>This is the number of bytes that are used to step from one audio channel to another.</td></tr><tr><td><strong>p_metadata (const char*)</strong></td><td>This is a per-frame metadata stream that should be in UTF-8 formatted XML and <code>NULL</code>-terminated. It is sent and received with the frame.</td></tr><tr><td><strong>timestamp (int64_t, 64-bit signed integer)</strong></td><td><p>This is a per-frame timestamp filled in by the NDI SDK using a high-precision clock. It represents the time (in 100 ns intervals measured in UTC time since the Unix Time Epoch 1/1/1970 00:00) when the frame was submitted to the SDK.</p><p></p><p>On modern sender systems, this will have ~1 μs accuracy and can be used to synchronize streams on the same connection, between connections, and between machines.</p><p></p><p>For inter-machine synchronization, it is important that some external clock locking capability with high precision is used, such as NTP.</p></td></tr></tbody></table>
+
+### Metadata Frames (NDILIB\_METADATA\_FRAME\_T)
+
+Metadata is specified as `NULL`-terminated UTF-8 XML data. The reason for this choice is so that the format can naturally be extended by anyone using it to represent data of any type and length.
+
+XML is also naturally backward and forward compatible because any implementation would happily ignore tags or parameters that are not understood (which, in turn, means that devices should naturally work with each other without requiring a rigid set of data parsing and standard complex data structures).
+
+<table data-full-width="true"><thead><tr><th width="294">Parameter</th><th>Description</th></tr></thead><tbody><tr><td><strong>length (int)</strong></td><td>This is the length of the metadata message in bytes. It includes the <code>NULL</code>-terminating character. If this is zero, then the length will be derived from the string length automatically.</td></tr><tr><td><strong>p_data (char*)</strong></td><td>This is the XML message data.</td></tr><tr><td><strong>timecode (int64_t, 64-bit signed integer)</strong></td><td><p>This is the timecode of this frame in 100 ns intervals. It is generally not used internally by the SDK but is passed through to applications who may interpret it as they wish.</p><p></p><p>When sending data, a value of <code>NDIlib_send_timecode_synthesize</code> can be specified (and should be the default); the operation of this value is documented in the sending section of this documentation.</p></td></tr></tbody></table>
+
+If you wish to put your own vendor specific metadata into fields, please use XML namespaces. The “NDI” XML namespace is reserved.
+
+{% hint style="warning" %}
+It is very important that you compose legal XML messages for _sending_. (On _receiving_ metadata, it is important that you support badly formed XML in case a sender did send something incorrect.)
+{% endhint %}
+
+If you want specific metadata flags to be standardized, please contact us.

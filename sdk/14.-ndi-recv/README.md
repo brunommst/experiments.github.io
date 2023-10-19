@@ -1,4 +1,4 @@
-# NDI-RECV
+# 14. NDI-RECV
 
 The **NDI Receive SDK** is how frames are received over the network. It is important to be aware that it can connect to sources and remain “connected” to them even when they are no longer available on the network; it will automatically reconnect if the source becomes available again.
 
@@ -153,13 +153,19 @@ You can then store this URL and provide it to an end user as the options for tha
 
 For sources indicating they support the ability to be configured, the NDI Studio Monitor tool this capability, as shown in the bottom-right corner of the image below.
 
-<figure><img src="../.gitbook/assets/image (1).png" alt="" width="332"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1).png" alt="" width="332"><figcaption></figcaption></figure>
 
 When you click this gear gadget, the application opens the web page specified by the sender.
 
 ### Receiver PTZ Control
 
 NDI standardizes the control of PTZ cameras. An NDI receiver will automatically sense whether the device it is connected to is a PTZ camera and whether it may be controlled automatically.
+
+<div align="left" data-full-width="false">
+
+<figure><img src="../../.gitbook/assets/image (15).png" alt="" width="203"><figcaption></figcaption></figure>
+
+</div>
 
 When controlling a camera via NDI, all configuration of the camera is completely transparent to the NDI client, which will respond to a uniform set of standard commands with well-defined parameter ranges. For instance, the NDI Studio Monitor tool uses these commands to display on-screen PTZ controls when the current source is reported to be a camera that supports control.
 
@@ -274,7 +280,7 @@ This message is very useful, allowing every receiver to ‘know’ whether its s
 
 To illustrate, consider a sender named “My Source A” sending to two destinations, “Switcher” and “Multi-viewer”. When “Switcher” places “My Source A” on program out, a tally message is sent from “Switcher” to “My Source A”. Thus, the source ‘knows’ it is visible on program output. At this point, it will echo its tally state to “Multi-viewer” (and “Switcher”) so that the receiver is aware that “My Source A” is on program out. This functionality is used in the NDI tools Studio Monitor application to display an indicator when the source monitored has its tally state set.
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 ### Frame Synchronization
 

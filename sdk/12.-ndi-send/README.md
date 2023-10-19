@@ -1,4 +1,4 @@
-# NDI-SEND
+# 12. NDI-SEND
 
 A call to `NDIlib_send_create` will create an instance of the sender. This will return an instance of the type `NDIlib_send_instance_t` (or `NULL` if it fails) representing the sending instance.
 
@@ -197,11 +197,11 @@ If you re-use the buffer immediately after calling this function, your video str
 If you are using the [**NDI Advanced SDK**](https://ndi.video/tech), it is possible to assign a completion handler for asynchronous frame sending that more explicitly allows you to track buffer ownership with asynchronous sending.
 {% endhint %}
 
-### Timecode synthesis
+### Timecode Synthesis
 
 It is possible to specify your own timecode for all data sent when sending video, audio, or metadata frames. You may also specify a value of `NDIlib_send_timecode_synthesize` (defined as `INT64_MAX`) to cause the SDK to generate the timecode for you. When you specify this, the timecode is synthesized as UTC time since the Unix Epoch (1/1/1970 00:00) with 100 ns precision.
 
-If you never specify a timecode at all (and instead ask for each to be synthesized) the current system clock time is used as the starting timecode (translated to UTC since the Unix Epoch), and synthetic values are generated. This keeping your streams exactly in sync, as long as the frames you are sending do does not deviate from the system time in any meaningful way. In practice this means that, if you never specify timecodes, they will always be generated correctly for you. Timecodes from different senders on the same machine will always be in sync with each other when working in this way. And if you have NTP installed on your local network, streams can be synchronized between multiple machines with very high precision.
+If you never specify a timecode at all (and instead ask for each to be synthesized), the current system clock time is used as the starting timecode (translated to UTC since the Unix Epoch), and synthetic values are generated. This keeps your streams exactly in sync as long as the frames you are sending do not deviate from the system time in any meaningful way. In practice, this means that if you never specify timecodes, they will always be generated correctly for you. Timecodes from different senders on the same machine will always be in sync with each other when working in this way. And if you have NTP installed on your local network, streams can be synchronized between multiple machines with very high precision.
 
 If you specify a timecode at a particular frame (audio or video), and then ask for all subsequent ones to be synthesized, the subsequent ones generated will continue this sequence. This maintains the correct relationship between the streams and samples generated, avoiding any meaningful deviation from the timecode you specified over time.
 

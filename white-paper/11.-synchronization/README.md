@@ -35,7 +35,7 @@ For an NDI source to correctly operate as an NDI Genlock, it is essential to bea
 * If the genlock clock cannot correctly genlock to an NDI sender, it will fall back to using the system clock and so can continue to work reasonably.
 * Since there is some (low) overhead associated with each genlock instance, it is recommended only to have one for each source that you wish to lock, too.
 
-### Timestamp, NDI Advanced SDK – AV Sync API
+### NDI Advanced SDK – Timestamp, AV Sync API
 
 NDI transmitters and receivers utilize the system clock as a point of reference. This system clock can be aligned with robust sources like NTP or PTP. The timing details from these sources are integrated into the NDI Stream through timestamps embedded in each video and audio frame (with audio frames being smaller than video frames).
 

@@ -14,7 +14,7 @@ layout:
 
 # 2. NDI Protocols
 
-### Reliable UDP – NDI v5
+### Reliable UDP – NDI 5
 
 In NDI version 5 the default communication mechanism is a Reliable UDP[^1] protocol that represents the state-of-the-art communication protocol that is implemented by building upon all the experience we have seen in the real world with NDI across a massive variety of different installations
 
@@ -30,7 +30,7 @@ Flow control: Reliable UDP incorporates flow control mechanisms to manage the ra
 
 Congestion control: RUDP also includes congestion control algorithms to prevent network congestion and avoid unnecessary packet loss. It dynamically adjusts the transmission rate based on network conditions, maintaining optimal throughput without overwhelming the network.
 
-### Multipath TCP – NDI v4
+### Multipath TCP – NDI 4
 
 This protocol permits transport across multiple NICs and all network paths, it is intended to use hardware-accelerated network adapters with adaptive bandwidth sharing across NICs.
 
@@ -38,7 +38,7 @@ Multipath TCP[^2] is a transmission protocol that offers advantages such as maxi
 
 However, in scenarios where 10Gbit interfaces are connected with 1Gbit interfaces, Multipath TCP's efficiency is compromised. This is primarily due to network switches being unable to effectively manage network congestion in such situations. As a result, the protocol may not perform optimally in these specific network configurations.
 
-### UDP with Forward Error Correction – NDI v3
+### UDP with Forward Error Correction – NDI 3
 
 This alternative protocol to TCP[^3] is used when reliable delivery of data [packets ](#user-content-fn-4)[^4]is not required. UDP[^5] is typically used for applications where timeliness is of higher priority than accuracy, such as streaming media, teleconferencing, and voice-over-IP (VoIP). Forward error correction (FEC) is a method of obtaining error control in data transmission in which the source (transmitter) sends redundant data and the destination (receiver).
 
@@ -46,7 +46,7 @@ UDP (User Datagram Protocol) with Forward Error Correction (FEC) is a beneficial
 
 However, it's important to note that using UDP with FEC requires additional computational processing on the receiver side. The receiver needs to implement algorithms and mechanisms to manage the error correction process. This involves decoding the received data and applying error correction techniques to recover any lost or corrupted packets.
 
-### Single TCP – NDI v1
+### Single TCP – NDI 1
 
 This network communications protocol enables two host systems to establish a connection, exchange data packets[^6], and ensure data is delivered intact to the correct destination. TCP[^7] is typically grouped with IP (Internet Protocol) and is collectively known as TCP/IP.
 

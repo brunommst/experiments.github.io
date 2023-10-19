@@ -28,13 +28,13 @@ You may distribute all files in this folder as you need and use them in any mark
 
 Components included in the SDK provide support for finding (find), receiving (recv), and sending (send). These share common structures and conventions to facilitate development and may all be used together.
 
-#### [NDI-SEND](software-distribution.md#ndi-send)
+#### [NDI-SEND](./#ndi-send)
 
 This is used to send video, audio, and metadata over the network. You establish yourself as a named source on the network, and then anyone may see and use the media that you are providing.
 
 Video can be sent at any resolution and framerate in RGB(+A) and YCbCr color spaces, and any number of receivers can connect to an individual NDI-Send.
 
-#### [NDI-FIND](software-distribution.md#ndi-find)
+#### [NDI-FIND](./#ndi-find)
 
 This is used to locate all of the sources on the local network that are serving media capabilities for use with NDI.
 

@@ -58,7 +58,7 @@ _Hardware NDI Devices must support NDI Groups to be compliant with the NDI stand
 
 Here are some examples of hardware devices with NDI Groups support:
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 

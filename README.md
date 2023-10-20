@@ -1,10 +1,5 @@
 ---
-cover: .gitbook/assets/ndi sdk background light (1).png
-coverY: 0
 layout:
-  cover:
-    visible: true
-    size: hero
   title:
     visible: true
   description:
@@ -23,9 +18,17 @@ This White Paper offers a compressed overview of NDI: its value and place in the
 \
 It is updated in real-time by the NDI team to reflect the most recent developments to our Core Tech Platform. **The current version of NDI is 5.6.**
 
+
+
+***
+
 ## What is NDI?
 
-<figure><img src=".gitbook/assets/ndilogo.gif" alt="NDI logo animation"><figcaption></figcaption></figure>
+<div align="center" data-full-width="false">
+
+<figure><img src=".gitbook/assets/NDI Black Logo Alpha 720p.gif" alt="NDI logo animation"><figcaption></figcaption></figure>
+
+</div>
 
 **NDI** stands for **Network Device Interface**. It is a widely adopted video connectivity standard based on proprietary IP networking specifications.\
 \
@@ -57,7 +60,7 @@ _from an **auction with thousands of bidders on social media** to a **parent cal
 
 _As video evolves, it unveils a common thread connecting all these new use cases and exciting possibilities. **One breakthrough that redefines video**:_&#x20;
 
-<figure><img src=".gitbook/assets/image (8).png" alt="Branded visual showcasing the essence of NDI, our biggest belief: There is no video without connection."><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/vision.jpg" alt="Branded visual showcasing the essence of NDI, our biggest belief: There is no video without connection."><figcaption></figcaption></figure>
 
 ### We believe **there is no video without connection**.  <a href="#the-videoverse" id="the-videoverse"></a>
 
@@ -69,9 +72,13 @@ We refer to this next iteration of the world video as the **videoverse:** _a con
 
 **NDI is the technology connecting it.**
 
-<figure><img src=".gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-##
+
+<div data-full-width="true">
+
+<figure><img src=".gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 ## The value of NDI
 

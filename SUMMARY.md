@@ -1,6 +1,6 @@
 # Table of contents
 
-* [📂 Docs Index](README.md)
+* [📂 DOCS INDEX](README.md)
 
 ## 📃 White Paper
 

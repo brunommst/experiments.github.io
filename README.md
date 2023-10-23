@@ -5,7 +5,7 @@ description: >-
   recent developments and updates to NDI.
 ---
 
-# 📂 Docs Index
+# Index
 
 * :page\_with\_curl: [**White Paper**](broken-reference)
 * :tools: [**SDK**](broken-reference)

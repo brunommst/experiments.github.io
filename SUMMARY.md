@@ -1,8 +1,10 @@
 # Table of contents
 
+* [📂 Docs Index](README.md)
+
 ## 📃 White Paper
 
-* [Introduction](README.md)
+* [Introduction](<README (1).md>)
 * [1. Discovery and Registration](white-paper/1.-discovery-and-registration/README.md)
   * [mDNS](white-paper/1.-discovery-and-registration/mdns.md)
   * [Discovery Service](white-paper/1.-discovery-and-registration/discovery-service.md)

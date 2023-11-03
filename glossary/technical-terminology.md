@@ -80,6 +80,10 @@ Subnet (short for subnetwork) refers to a distinct subdivision of an IP network,
 
 TCP (Transmission Control Protocol) is a network communications protocol that enables two host systems to establish a connection and exchange data packets, ensuring that data is delivered to the correct destination. TCP is typically grouped with IP (Internet Protocol) and is known collectively as TCP/IP.
 
+### TTL
+
+**Time to live** (**TTL**) or **hop limit** is a mechanism that limits the lifespan or lifetime of data in a computer or network. TTL may be implemented as a [counter](https://en.wikipedia.org/wiki/Counter\_\(digital\)) or [timestamp](https://en.wikipedia.org/wiki/Timestamp) attached to or embedded in the data. Once the prescribed event count or timespan has elapsed, data is discarded or revalidated. In [computer networking](https://en.wikipedia.org/wiki/Computer\_networking), TTL prevents a data packet from circulating indefinitely. In [computing](https://en.wikipedia.org/wiki/Computing) applications, TTL is commonly used to improve performance and manage the [caching](https://en.wikipedia.org/wiki/Cache\_\(computing\)) of data.
+
 ### UDP
 
 UDP (User Datagram Protocol) is an alternative protocol to TCP that is used when reliable delivery of data packets is not required. UDP is typically used for applications where timeliness is of higher priority than accuracy, such as streaming media, teleconferencing, and voice-over IP (VoIP).

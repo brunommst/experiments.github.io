@@ -36,10 +36,11 @@
   * [SpeedHQ Compression](white-paper/9.-encoding-and-decoding/README.md#speedhq-compression)
   * [NDI HX](white-paper/9.-encoding-and-decoding/README.md#ndi-hx)
 * [10. Multicast](white-paper/10.-multicast.md)
-* [11. Synchronization](white-paper/11.-synchronization/README.md)
-  * [Genlock API](white-paper/11.-synchronization/README.md#ndi-advanced-sdk-genlock-api)
-  * [Timestamp, AV Sync API](white-paper/11.-synchronization/README.md#ndi-advanced-sdk-timestamp-av-sync-api)
-* [12. NDI in Cloud](white-paper/12.-ndi-in-cloud.md)
+* [11. NDI Administrative Settings](white-paper/11.-ndi-administrative-settings.md)
+* [12. Synchronization](white-paper/12.-synchronization/README.md)
+  * [Genlock API](white-paper/12.-synchronization/README.md#ndi-advanced-sdk-genlock-api)
+  * [Timestamp, AV Sync API](white-paper/12.-synchronization/README.md#ndi-advanced-sdk-timestamp-av-sync-api)
+* [13. NDI in Cloud](white-paper/13.-ndi-in-cloud.md)
 
 ## 🛠 SDK
 

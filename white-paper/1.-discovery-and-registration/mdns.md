@@ -1,6 +1,6 @@
 # mDNS
 
-MAC (Media Access Control) address refers to a unique physical address identifying a network node.Sending and receiving video streams across an IP[^1] network requires applications that support video and can discover receiving applications that are looking for video.
+MAC (Media Access Control) address refers to a unique physical address identifying a network node. Sending and receiving video streams across an IP[^1] network requires applications that support video and can discover receiving applications that are looking for video.
 
 NDI resolves host names to IP addresses over the LAN[^2] and does so automatically. When you start an application that sends NDI, the devices that can receive NDI become aware instantaneously. While this is a typical function on almost all networks, there are some cases where it is important to know how this works to properly configure networks utilizing managed data flow protocols.
 

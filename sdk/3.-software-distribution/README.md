@@ -1,4 +1,4 @@
-# Software Distribution
+# 3. Software Distribution
 
 To clarify which files may be distributed with your applications, the following are the files and the distribution terms under which they may be used for the SDK.
 
@@ -22,7 +22,7 @@ An alternative is to provide a user link to the NDI-provided download of this ap
 
 ### Content Files (NDI\_SDK\_DIR\LOGOS\\\*.\*)
 
-You may distribute all files in this folder as you need and use them in any marketing, product, or web material. Please refer to the [NDI Brand Guidelines](http://127.0.0.1:5000/o/a38gd62OPjDFyE3J0iLo/s/oUOsQw9oPpQ8LFlxOpLI/).
+You may distribute all files in this folder as you need and use them in any marketing, product, or web material. Please refer to the [NDI Brand Guidelines](https://app.gitbook.com/o/a38gd62OPjDFyE3J0iLo/s/oUOsQw9oPpQ8LFlxOpLI/).
 
 ### Libraries
 

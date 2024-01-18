@@ -45,7 +45,7 @@
 ## 🛠 SDK
 
 * [Introduction](sdk/introduction.md)
-* [1. SDK Release Notes](sdk/1.-sdk-release-notes.md)
+* [1. Release Notes](sdk/1.-release-notes.md)
 * [2. Licensing](sdk/2.-licensing.md)
 * [3. Software Distribution](sdk/3.-software-distribution/README.md)
   * [Header Files](sdk/3.-software-distribution/README.md#header-files-ndi\_sdk\_dir-include-.h)

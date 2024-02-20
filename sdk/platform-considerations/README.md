@@ -1,4 +1,4 @@
-# 11. Platform Considerations
+# Platform Considerations
 
 Of course, all platforms are slightly different, and the location of configuration files and the settings can differ slightly between platforms. On all platforms, if there is an environment variable `NDI_CONFIG_DIR`set before initializing the SDK, then we will load the ndi-config.v1.json from this folder when the library is used.
 
@@ -69,5 +69,5 @@ The usage of these libraries depends on the `avahi-daemon` service to be install
 The configuration settings are stored in `$HOME/.ndi/ndi-config.v1.json`.
 
 {% hint style="warning" %}
-Please take careful note of the comments under Linux in the Reliable UDP in the [Performance and Implementation](../6.-performance-and-implementation/) section.
+Please take careful note of the comments under Linux in the Reliable UDP in the [Performance and Implementation](../performance-and-implementation/) section.
 {% endhint %}

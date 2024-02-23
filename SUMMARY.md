@@ -42,7 +42,7 @@
   * [Timestamp, AV Sync API](white-paper/synchronization/README.md#ndi-advanced-sdk-timestamp-av-sync-api)
 * [NDI in Cloud](white-paper/ndi-in-cloud.md)
 
-## 🛠 SDK
+## 🛠️ SDK
 
 * [Introduction](sdk/introduction.md)
 * [Release Notes](sdk/release-notes.md)
@@ -106,6 +106,6 @@
 * [3rd Party Rights](sdk/3rd-party-rights.md)
 * [Support](sdk/support.md)
 
-## ℹ Glossary
+## ℹ️ Glossary
 
 * [Technical terminology](glossary/technical-terminology.md)

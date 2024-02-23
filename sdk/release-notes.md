@@ -4,6 +4,29 @@
 **These release notes refer to changes in our complete technology, including the SDKs, NDI Tools, and any other items. Take your time to comb through the documentation and decide what is more relevant for your specific context.**
 {% endhint %}
 
+### NDI 5.6.1
+
+#### **SDK**
+
+* Bug fix in NDI genlock, where the genlock connect API call could get blocked.
+* Updated the NDI library for Android to use an embedded version of mDNS for compatibility with newer Android OS.
+* Fixed a potential crash in the NDI library when destroying the NDI sender instance on Windows.
+
+#### **Updates specific to NDI Advanced**
+
+* Xilinx projects migrated to 2022.1 tools.
+* Added reference design for Kria KV260 development board by AMD.
+* Buf fix in the clear-text FPGA logic.
+* Zynq 7000 HDMI Rx logic improved.
+* uSD images migrated to Debian 12 (Bookworm).
+
+#### NDI Tools
+
+* Bug fix in NDI Test Patterns for Windows where the NDI send pattern would appear green when changing the frame rate of imported stills.
+* Bug fix in NDI Screen Capture for Windows where options were not correctly restored on system reboot/restart.
+* Bug fix in NDI Bridge when displaying calculated bandwidth in the Ul.
+* Fixed an issue in NDI DirectShow filter to preserve the aspect ratio.
+
 ## NDI 5.6.0
 
 #### **NDI Bridge Enhancements**
